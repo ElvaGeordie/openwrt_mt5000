@@ -11,6 +11,58 @@ full customization, to use the device in ways never envisioned.
 
 Sunshine!
 
+## For GL.iNet MT-5000 Unoffical support
+### Hardware Desc
+
+- SoC: MediaTek MT7987A (Quad-core ARM Cortex-A53 2.0 GHz)
+- RAM: 1024 MiB DDR4
+- Flash: 8192 MiB EMMC
+- Ethernet:
+   2x 10/100/1000/2500 Mbps LAN (Realtek RTL8366ub Switch)
+   1x 10/100/1000/2500 Mbps WAN (SoC internal PHY)
+- Buttons: Reset
+- LEDs: 3x (Blue: Run, White: System, White: Vpn)
+- UART: 115200 8n1 (VCC, RX, TX, GND)
+
+### WHAT IS WORKING
+
+- Base System: SOC & RAM & FLASH & Ethernet, etc.
+- Supports WAN-LAN and LAN-LAN communication.
+- Support On-Chip PPE(Packet Processing Engine). (**Hardware Flow Offload** CAN BE **ENABLED**!)
+
+
+### Quick Start
+
+#### Compile by your self
+
+```
+./scripts/feeds update -a
+./scripts/feeds install -a
+make menuconfig
+  --> Target System: Select `MediaTek ARM`
+  --> Subtarget: Select `Filogic 8x0(MT798x)`
+  --> Target Profile: Select `GL.iNet GL-MT5000`
+  --> Target Images --> Root filesystem partition size (in MiB): Change to 7000
+  --> Save 
+  --> Exit
+make -j8 defconfig download clean world
+```
+
+And use `` to flash your router in OpenWRT LuCI's System-Flash Firmware.
+#### Download pre-compiled fireware: See Releases.
+
+#### After new firmware is flashed
+
+By the default, LuCI is not installed.
+You can ssh into your router and install it:
+```
+ssh root@192.168.1.1
+apk update
+apk add luci
+```
+
+Enjoy!
+
 ## Download
 
 Built firmware images are available for many architectures and come with a
