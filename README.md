@@ -33,7 +33,7 @@ Sunshine!
 
 ### Quick Start
 
-#### Compile by your self
+#### Compile by yourself
 
 !!! Prepare your compile environment by following https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem
 
@@ -52,11 +52,11 @@ make -j8 defconfig download clean world
 
 And use `bin/targets/mediatek/filogic/openwrt-mediatek-filogic-glinet_gl-mt5000-squashfs-sysupgrade.bin` to flash your router in OpenWRT LuCI's System-Flash Firmware.
 
-#### Download pre-compiled fireware: See Releases.
+#### Download pre-compiled firmware: See Releases.
 
 #### After new firmware is flashed
 
-By the default, LuCI is not installed.
+By default, LuCI is not installed.
 You can ssh into your router and install it:
 ```
 ssh root@192.168.1.1
