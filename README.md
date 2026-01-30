@@ -12,6 +12,7 @@ full customization, to use the device in ways never envisioned.
 Sunshine!
 
 ## For GL.iNet MT-5000 Unoffical support
+Based on: OpenWRT 25.12 branch
 ### Hardware Desc
 
 - SoC: MediaTek MT7987A (Quad-core ARM Cortex-A53 2.0 GHz)
